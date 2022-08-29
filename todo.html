@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+    <style>
+        
+
+        section{
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            background-color: lightblue;
+            text-align: center;
+
+        }
+        #todo-input{
+            font-size: 24px;
+            padding: 12px 24px;
+            margin-right: 16px;
+            border-radius: 8px;
+            border:1px solid #ccc;
+            outline: none;
+        }
+
+        button{
+            font-size: 24px;
+            margin-top: 24px;
+            margin-right: 36px;
+            padding: 12px 24px;
+            
+
+        }
+
+        li{
+            
+            list-style: none;
+            font-family: 'Raleway',sans-serif;
+            font-size: 25px;
+            background-color: #ccc;
+            height: 43px;
+            width: 40%;
+            margin: auto ;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            
+
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <input id="todo-input" type="text" placeholder="Enter todo item ">
+            <br>
+            
+            <button id="add-item">Add list item</button>
+            <button id="delete-item">Delete</button>
+            <button id="update-item">update</button>
+            <ul id="todo-list">
+                <li id="item1">List item 1
+                    
+                </li>
+                
+                
+            </ul>
+        </section>
+    </header>
+    <script src="todo-js.js"></script>
+    
+</body>
+</html>

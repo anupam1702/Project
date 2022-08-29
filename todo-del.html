@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do delete list</title>
+    <style>
+        input{
+            font-family: 'Raleway',sans-serif;
+            font-size: 25px;
+
+        }
+
+        header>section{
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            background-color: lightblue;
+            text-align: center;
+
+        }
+        #todo-input{
+            font-size: 24px;
+            padding: 12px 24px;
+            margin-right: 16px;
+            border-radius: 8px;
+            border:1px solid #ccc;
+            outline: none;
+        }
+
+        #add-item{
+            font-size: 24px;
+            margin-top: 24px;
+            margin-right: 36px;
+            padding: 12px 24px;
+
+        }
+
+        li{
+            
+            list-style: none;
+            font-family: 'Raleway',sans-serif;
+            font-size: 25px;
+            background-color: #ccc;
+            height: 43px;
+            width: 40%;
+            margin: auto ;
+            margin-bottom: 15px;
+            padding-top: 10px;
+
+        }
+        #delete{
+            font-size: smaller;
+            height: 51px;
+            width: 48px;
+            
+        }
+        .item1{
+            display: inline-block;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <input id="todo-input" type="text" placeholder="Enter todo item too.....">
+            
+            <button id="add-item">Add list item</button>
+            <ul id="todo-list">
+                <li class="item1">List item 1
+                    
+                </li>
+                <button id="delete">X</button>
+                
+                
+                
+            </ul>
+        </section>
+    </header>
+    <script >
+
+
+
+        var list=document.getElementById('todo-list');
+var inputBox=document.getElementById('todo-input');
+var btnAdd=document.getElementById('add-item');
+
+var currentInputvalue='';
+inputBox.addEventListener('input',function(e){
+    currentInputvalue=e.target.value;
+
+});
+
+
+inputBox.addEventListener('keyup',function(e){
+    if(e.keyCode===13){
+        addListItem();
+        
+    }
+})
+
+function addListItem(){
+    if(currentInputvalue!==undefined && currentInputvalue!==null && currentInputvalue!==''){
+    var newListElement=document.createElement('li');
+    var textNode=document.createTextNode(currentInputvalue);
+    newListElement.appendChild(textNode);
+    newListElement.className="item1";
+    newListElement.style
+
+    var deleteItem=document.createElement('button');
+    var textNodee=document.createTextNode('X');
+    deleteItem.appendChild(textNodee);
+    deleteItem.style.fontSize="smaller";
+    deleteItem.style.height="26px";
+    deleteItem.style.width="28px";
+    
+
+
+    list.appendChild(newListElement);
+    list.appendChild(deleteItem);
+
+    
+
+    
+
+    
+
+    
+
+
+
+   
+    
+    
+    
+    
+
+    
+
+    
+    
+
+
+    inputBox.value='';
+    currentInputvalue='';
+    }
+    else{
+        alert('please enter a valid item ');
+    }
+   
+}
+
+
+btnAdd.addEventListener('click',addListItem)
+
+
+
+// var addCrossIcon = document.createElement("button");
+//     addCrossIcon.appendChild(document.createTextNode("X"));
+//     addCrossIcon.setAttribute("class","delete");
+//     addListItem.appendChild(addCrossIcon);
+//     addCrossIcon.addEventListener("click", function(){
+//         this.parentNode.remove();
+//     });
+
+
+    
+    </script>
+    
+</body>
+</html>
